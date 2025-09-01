@@ -22,7 +22,7 @@ export const Header: React.FC<HeaderProps> = ({
         className={`font-bold mb-2 ${isCompact ? 'text-2xl' : 'text-4xl'}`} 
         style={{ 
           color: COLORS.primaryText,
-          fontFamily: 'Raleway, sans-serif'
+          fontFamily: 'Amatic SC, cursive'
         }}
       >
         {title}

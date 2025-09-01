@@ -35,7 +35,7 @@ export const MonthView: React.FC<MonthViewProps> = ({
       className={`min-h-screen ${className}`} 
       style={{ 
         backgroundColor: COLORS.background, 
-        fontFamily: 'Raleway, sans-serif' 
+        fontFamily: 'Amatic SC, cursive' 
       }}
     >
       <div className="container mx-auto px-4 py-6">

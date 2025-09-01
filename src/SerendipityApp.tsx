@@ -140,7 +140,7 @@ const SerendipityApp: React.FC = () => {
       className="min-h-screen"
       style={{ 
         backgroundColor: COLORS.background,
-        fontFamily: 'Raleway, sans-serif'
+        fontFamily: 'Amatic SC, cursive'
       }}
     >
       <div className="container mx-auto px-4 py-6">
