@@ -137,11 +137,8 @@ const SerendipityApp: React.FC = () => {
   // Main app view
   return (
     <div 
-      className="min-h-screen"
-      style={{ 
-        backgroundColor: COLORS.background,
-        fontFamily: 'Amatic SC, cursive'
-      }}
+      className="min-h-screen font-amatic"
+      style={{ backgroundColor: COLORS.background }}
     >
       <div className="container mx-auto px-4 py-6">
         {/* App Header */}

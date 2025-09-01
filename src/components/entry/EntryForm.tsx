@@ -127,7 +127,7 @@ export const EntryForm: React.FC<EntryFormProps> = ({
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-bold" style={{ color: COLORS.primaryText }}>
+          <h2 className="text-4xl font-amatic" style={{ color: COLORS.primaryText }}>
             {entry ? 'Editar' : 'Adicionar'} Acontecimento
           </h2>
           <button
@@ -144,7 +144,7 @@ export const EntryForm: React.FC<EntryFormProps> = ({
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Category Selection */}
           <div>
-            <label className="block font-semibold mb-2" style={{ color: COLORS.primaryText }}>
+            <label className="block font-semibold mb-2 font-amatic" style={{ color: COLORS.primaryText }}>
               Categoria *
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -171,7 +171,7 @@ export const EntryForm: React.FC<EntryFormProps> = ({
                       })
                     ) : null}
                   </div>
-                  <div className="text-sm font-medium" style={{ color: COLORS.primaryText }}>
+                  <div className="text-sm font-medium font-poiret" style={{ color: COLORS.primaryText }}>
                     {category.name}
                   </div>
                 </button>
@@ -184,7 +184,7 @@ export const EntryForm: React.FC<EntryFormProps> = ({
 
           {/* Description */}
           <div>
-            <label className="block font-semibold mb-2" style={{ color: COLORS.primaryText }}>
+            <label className="block font-semibold mb-2 font-amatic" style={{ color: COLORS.primaryText }}>
               Descrição *
             </label>
             <textarea
@@ -210,7 +210,7 @@ export const EntryForm: React.FC<EntryFormProps> = ({
           {/* Date and Time */}
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block font-semibold mb-2" style={{ color: COLORS.primaryText }}>
+              <label className="block font-semibold mb-2 font-amatic" style={{ color: COLORS.primaryText }}>
                 Data *
               </label>
               <input
@@ -226,7 +226,7 @@ export const EntryForm: React.FC<EntryFormProps> = ({
               )}
             </div>
             <div>
-              <label className="block font-semibold mb-2" style={{ color: COLORS.primaryText }}>
+              <label className="block font-semibold mb-2 font-amatic" style={{ color: COLORS.primaryText }}>
                 Hora (opcional)
               </label>
               <input
@@ -244,7 +244,7 @@ export const EntryForm: React.FC<EntryFormProps> = ({
 
           {/* Links */}
           <div>
-            <label className="block font-semibold mb-2" style={{ color: COLORS.primaryText }}>
+            <label className="block font-semibold mb-2 font-amatic" style={{ color: COLORS.primaryText }}>
               Links (opcionais)
             </label>
             {[1, 2, 3].map(num => {

@@ -19,18 +19,15 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className={`text-center mb-8 ${className}`}>
       <h1 
-        className={`font-bold mb-2 ${isCompact ? 'text-4xl' : 'text-6xl'}`} 
-        style={{ 
-          color: COLORS.primaryText,
-          fontFamily: 'Amatic SC, cursive'
-        }}
+        className={`font-bold mb-2 font-amatic ${isCompact ? 'text-4xl' : 'text-8xl'}`} 
+        style={{ color: COLORS.primaryText }}
       >
         {title}
       </h1>
       
       {subtitle && (
         <p 
-          className={`opacity-80 ${isCompact ? 'text-lg' : 'text-xl'}`} 
+          className={`opacity-80 font-poiret ${isCompact ? 'text-lg' : 'text-xl'}`} 
           style={{ color: COLORS.primaryText }}
         >
           {subtitle}
