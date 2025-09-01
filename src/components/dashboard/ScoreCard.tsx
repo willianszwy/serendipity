@@ -43,12 +43,12 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
           
           return (
             <div key={category.id} className="text-center">
-              <div className={`mb-2 flex justify-center items-center ${isCompact ? 'text-2xl mb-1' : 'text-3xl'}`}>
+              <div className={`mb-2 flex justify-center items-center ${isCompact ? 'text-3xl mb-1' : 'text-4xl'}`}>
                 {category.emoji ? (
                   category.emoji
                 ) : category.icon ? (
                   React.createElement(category.icon, { 
-                    className: isCompact ? "w-6 h-6" : "w-8 h-8", 
+                    className: isCompact ? "w-8 h-8" : "w-10 h-10", 
                     style: { color: COLORS.lightText } 
                   })
                 ) : null}
@@ -56,7 +56,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
               
               {!isCompact && (
                 <div 
-                  className="text-sm" 
+                  className="text-base" 
                   style={{ color: COLORS.lightText }}
                 >
                   {category.name}
@@ -64,7 +64,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
               )}
               
               <div 
-                className={`font-bold mt-1 ${isCompact ? 'text-lg' : 'text-2xl'}`} 
+                className={`font-bold mt-1 ${isCompact ? 'text-xl' : 'text-3xl'}`} 
                 style={{ color: COLORS.lightText }}
                 title={`${category.name}: ${count}`}
               >

@@ -45,11 +45,11 @@ export const TodayEntries: React.FC<TodayEntriesProps> = ({
     >
       {showTitle && (
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-bold" style={{ color: COLORS.lightText }}>
+          <h2 className="text-2xl font-bold" style={{ color: COLORS.lightText }}>
             Acontecimentos de Hoje
           </h2>
           <span 
-            className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm font-medium"
+            className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-base font-medium"
             style={{ color: COLORS.lightText }}
           >
             {todayEntries.length} {todayEntries.length === 1 ? 'registro' : 'registros'}
