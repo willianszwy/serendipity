@@ -32,7 +32,7 @@ export const MonthView: React.FC<MonthViewProps> = ({
 
   return (
     <div 
-      className={`min-h-screen font-amatic ${className}`} 
+      className={`min-h-screen font-borel ${className}`} 
       style={{ backgroundColor: COLORS.background }}
     >
       <div className="container mx-auto px-4 py-6">
@@ -48,11 +48,11 @@ export const MonthView: React.FC<MonthViewProps> = ({
           </button>
           
           <div className="flex-1">
-            <h2 className="text-5xl font-amatic" style={{ color: COLORS.primaryText }}>
+            <h2 className="text-5xl font-borel" style={{ color: COLORS.primaryText }}>
               {monthName} {year}
             </h2>
             {totalEntries > 0 && (
-              <p className="text-lg opacity-75 mt-1 font-poiret" style={{ color: COLORS.primaryText }}>
+              <p className="text-lg opacity-75 mt-1 font-borel" style={{ color: COLORS.primaryText }}>
                 {totalEntries} {totalEntries === 1 ? 'acontecimento' : 'acontecimentos'} registrado{totalEntries > 1 ? 's' : ''}
               </p>
             )}
@@ -69,9 +69,9 @@ export const MonthView: React.FC<MonthViewProps> = ({
                 className="rounded-lg p-4 shadow-lg" 
                 style={{ backgroundColor: COLORS.dailyCard }}
               >
-                <h3 className="mb-3 text-4xl font-amatic" style={{ color: COLORS.lightText }}>
+                <h3 className="mb-3 text-4xl font-borel" style={{ color: COLORS.lightText }}>
                   {formatDatePT(new Date(date))}
-                  <span className="ml-2 text-xl opacity-75 font-poiret">
+                  <span className="ml-2 text-xl opacity-75 font-borel">
                     ({dayEntries.length} {dayEntries.length === 1 ? 'registro' : 'registros'})
                   </span>
                 </h3>

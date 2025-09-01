@@ -30,7 +30,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
     >
       {showTitle && (
         <h2 
-          className={`font-amatic mb-4 ${isCompact ? 'text-3xl mb-3' : 'text-4xl'}`} 
+          className={`font-borel mb-4 ${isCompact ? 'text-3xl mb-3' : 'text-4xl'}`} 
           style={{ color: COLORS.lightText }}
         >
           {title}
@@ -56,7 +56,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
               
               {!isCompact && (
                 <div 
-                  className="text-base font-poiret font-bold" 
+                  className="text-base font-borel font-bold" 
                   style={{ color: COLORS.lightText }}
                 >
                   {category.name}

@@ -137,7 +137,7 @@ const SerendipityApp: React.FC = () => {
   // Main app view
   return (
     <div 
-      className="min-h-screen font-amatic"
+      className="min-h-screen font-borel"
       style={{ backgroundColor: COLORS.background }}
     >
       <div className="container mx-auto px-4 py-6">
@@ -146,7 +146,7 @@ const SerendipityApp: React.FC = () => {
 
         {/* Daily Score Card */}
         <ScoreCard
-          title="Placar Diário"
+          title="Diário"
           stats={dailyStats}
           backgroundColor={COLORS.dailyCard}
           categories={CATEGORIES}
@@ -154,7 +154,7 @@ const SerendipityApp: React.FC = () => {
 
         {/* Monthly Score Card */}
         <ScoreCard
-          title="Placar Mensal"
+          title="Mensal"
           stats={monthlyStats}
           backgroundColor={COLORS.monthlyCard}
           categories={CATEGORIES}

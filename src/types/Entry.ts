@@ -1,4 +1,4 @@
-export type CategoryId = 'gratidao' | 'serendipity' | 'manifestacao' | 'desejo' | 'sonho';
+export type CategoryId = 'gratidao' | 'serendipity' | 'manifestacao' | 'desejo' | 'sonho' | 'esp';
 
 export interface Entry {
   id: number;

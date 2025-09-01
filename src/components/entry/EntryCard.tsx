@@ -56,7 +56,7 @@ export const EntryCard: React.FC<EntryCardProps> = ({
             ) : null}
           </div>
           <span 
-            className={`font-poiret font-bold ${isCompact ? "text-sm" : ""}`} 
+            className={`font-borel font-bold ${isCompact ? "text-sm" : ""}`} 
             style={{ color: COLORS.lightText }}
           >
             {category?.name}
@@ -90,7 +90,7 @@ export const EntryCard: React.FC<EntryCardProps> = ({
       {/* Description */}
       {entry.description && (
         <p 
-          className={`mb-2 font-poiret font-bold ${isCompact ? 'text-sm' : ''}`} 
+          className={`mb-2 font-borel font-bold ${isCompact ? 'text-sm' : ''}`} 
           style={{ color: COLORS.lightText }}
         >
           {entry.description}
@@ -99,7 +99,7 @@ export const EntryCard: React.FC<EntryCardProps> = ({
       
       {/* Date and Time Info */}
       <div 
-        className="flex items-center gap-4 text-sm opacity-80 font-poiret font-bold" 
+        className="flex items-center gap-4 text-sm opacity-80 font-borel font-bold" 
         style={{ color: COLORS.lightText }}
       >
         {entry.time && (
@@ -125,7 +125,7 @@ export const EntryCard: React.FC<EntryCardProps> = ({
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-sm hover:underline transition-colors font-poiret font-bold"
+                className="flex items-center gap-1 text-sm hover:underline transition-colors font-borel font-bold"
                 style={{ color: COLORS.lightText }}
                 title={link}
               >

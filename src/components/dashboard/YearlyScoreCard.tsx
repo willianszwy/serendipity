@@ -53,10 +53,10 @@ export const YearlyScoreCard: React.FC<YearlyScoreCardProps> = ({
     >
       {showTitle && (
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-4xl font-amatic" style={{ color: COLORS.primaryText }}>
-            Placar Anual
+          <h2 className="text-4xl font-borel" style={{ color: COLORS.primaryText }}>
+            Anual
           </h2>
-          <div className="text-base opacity-75 font-poiret" style={{ color: COLORS.primaryText }}>
+          <div className="text-base opacity-75 font-borel" style={{ color: COLORS.primaryText }}>
             {currentYear} • {totalEntries} registros
           </div>
         </div>

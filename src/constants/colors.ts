@@ -1,18 +1,18 @@
 // Theme colors used throughout the application
 export const COLORS = {
   // Main background color
-  background: '#e8dfe0',
+  background: '#F5E6FA',
   
   // Primary text color
-  primaryText: '#52473d',
+  primaryText: '#290E56',
   
   // Card backgrounds
-  dailyCard: '#8a9ea7',
-  monthlyCard: '#8d9b6a', 
-  yearlyCard: '#e9c770',
+  dailyCard: '#F1C3DD',
+  monthlyCard: '#EDA0BF', 
+  yearlyCard: '#BC96CD',
   
   // Light text on dark backgrounds
-  lightText: '#e8dfe0',
+  lightText: '#F5E6FA',
   
   // Accent colors
   pink: {
