@@ -153,7 +153,7 @@ const SerendipityApp: React.FC = () => {
     >
       <div className="container mx-auto px-4 py-6">
         {/* App Header */}
-        <Header onDebugRefresh={handleDebugRefresh} />
+        <Header />
 
         {/* Daily Score Card */}
         <ScoreCard

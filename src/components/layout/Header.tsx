@@ -6,15 +6,13 @@ export interface HeaderProps {
   subtitle?: string;
   className?: string;
   variant?: 'default' | 'compact';
-  onDebugRefresh?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   title = APP_INFO.NAME,
   subtitle = APP_INFO.TAGLINE,
   className = '',
-  variant = 'default',
-  onDebugRefresh
+  variant = 'default'
 }) => {
   const isCompact = variant === 'compact';
 
@@ -36,15 +34,6 @@ export const Header: React.FC<HeaderProps> = ({
         </p>
       )}
       
-      {/* Debug button - temporary */}
-      {onDebugRefresh && (
-        <button
-          onClick={onDebugRefresh}
-          className="mt-4 px-4 py-2 bg-red-500 text-white rounded text-sm"
-        >
-          🔧 Debug Refresh Stats
-        </button>
-      )}
     </header>
   );
 };
