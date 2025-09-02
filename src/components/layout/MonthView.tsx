@@ -67,7 +67,7 @@ export const MonthView: React.FC<MonthViewProps> = ({
               <div 
                 key={date} 
                 className="rounded-lg p-4 shadow-lg" 
-                style={{ backgroundColor: COLORS.dailyCard }}
+                style={{ backgroundColor: COLORS.monthlyCard }}
               >
                 <h3 className="mb-3 text-4xl font-borel" style={{ color: COLORS.primaryText }}>
                   {formatDatePT(new Date(date))}
@@ -107,7 +107,7 @@ export const MonthView: React.FC<MonthViewProps> = ({
             <div className="mb-4">
               <div 
                 className="w-16 h-16 mx-auto rounded-full flex items-center justify-center"
-                style={{ backgroundColor: COLORS.dailyCard }}
+                style={{ backgroundColor: COLORS.monthlyCard }}
               >
                 <span className="text-2xl opacity-50">📅</span>
               </div>

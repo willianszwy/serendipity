@@ -12,7 +12,6 @@ import {
   ErrorDisplay,
   ScoreCard,
   YearlyScoreCard,
-  TodayEntries,
   EntryForm
 } from './components';
 
@@ -29,7 +28,6 @@ const SerendipityApp: React.FC = () => {
   } = useEntries();
 
   const {
-    dailyStats,
     monthlyStats,
     yearlyStats,
     getMonthEntries
@@ -145,14 +143,6 @@ const SerendipityApp: React.FC = () => {
         {/* App Header */}
         <Header />
 
-        {/* Daily Score Card */}
-        <ScoreCard
-          title="Diário"
-          stats={dailyStats}
-          backgroundColor={COLORS.dailyCard}
-          categories={CATEGORIES}
-        />
-
         {/* Monthly Score Card */}
         <ScoreCard
           title="Mensal"
@@ -169,13 +159,6 @@ const SerendipityApp: React.FC = () => {
           currentYear={currentDate.getFullYear()}
         />
 
-        {/* Today's Entries */}
-        <TodayEntries
-          entries={entries}
-          categories={CATEGORIES}
-          onEdit={handleEdit}
-          onDelete={handleDeleteEntry}
-        />
       </div>
 
       {/* Floating Action Button */}

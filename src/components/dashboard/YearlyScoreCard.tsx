@@ -93,12 +93,6 @@ export const YearlyScoreCard: React.FC<YearlyScoreCardProps> = ({
                   </div>
                 </th>
               ))}
-              <th 
-                className="text-center p-2 font-semibold" 
-                style={{ color: COLORS.primaryText }}
-              >
-                Total
-              </th>
             </tr>
           </thead>
           <tbody>
@@ -136,14 +130,6 @@ export const YearlyScoreCard: React.FC<YearlyScoreCardProps> = ({
                       </td>
                     );
                   })}
-                  <td className="text-center p-2">
-                    <span 
-                      className={`text-lg font-bold ${monthTotal > 0 ? '' : 'opacity-50'}`} 
-                      style={{ color: COLORS.primaryText }}
-                    >
-                      {monthTotal}
-                    </span>
-                  </td>
                 </tr>
               );
             })}
@@ -170,14 +156,6 @@ export const YearlyScoreCard: React.FC<YearlyScoreCardProps> = ({
                   </th>
                 );
               })}
-              <th className="text-center p-2">
-                <span 
-                  className="text-xl font-bold" 
-                  style={{ color: COLORS.primaryText }}
-                >
-                  {totalEntries}
-                </span>
-              </th>
             </tr>
           </tfoot>
         </table>

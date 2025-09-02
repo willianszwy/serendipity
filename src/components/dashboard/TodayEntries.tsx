@@ -41,7 +41,7 @@ export const TodayEntries: React.FC<TodayEntriesProps> = ({
   return (
     <div 
       className={`rounded-lg p-6 mb-6 shadow-lg ${className}`} 
-      style={{ backgroundColor: COLORS.dailyCard }}
+      style={{ backgroundColor: COLORS.monthlyCard }}
     >
       {showTitle && (
         <div className="flex justify-between items-center mb-4">

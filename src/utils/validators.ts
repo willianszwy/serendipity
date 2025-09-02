@@ -61,6 +61,7 @@ export const validateEntryData = (data: CreateEntryData): { isValid: boolean; er
     errors.push('Descrição deve ter no máximo 600 caracteres');
   }
   
+  // Date validation
   if (!data.date) {
     errors.push('Data é obrigatória');
   } else if (!isValidDate(data.date)) {

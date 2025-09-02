@@ -7,9 +7,8 @@ export const COLORS = {
   primaryText: '#290E56',
   
   // Card backgrounds
-  dailyCard: '#F1C3DD',
-  monthlyCard: '#EDA0BF', 
-  yearlyCard: '#BC96CD',
+  monthlyCard: '#F1c3dd', 
+  yearlyCard: '#eda0bf',
   
   // Light text on dark backgrounds
   lightText: '#F5E6FA',
@@ -35,7 +34,6 @@ export const COLORS = {
 export const CSS_VARIABLES = {
   '--serendipity-bg': COLORS.background,
   '--serendipity-primary-text': COLORS.primaryText,
-  '--serendipity-daily-card': COLORS.dailyCard,
   '--serendipity-monthly-card': COLORS.monthlyCard,
   '--serendipity-yearly-card': COLORS.yearlyCard,
   '--serendipity-light-text': COLORS.lightText

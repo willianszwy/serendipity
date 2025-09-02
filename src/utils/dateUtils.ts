@@ -4,9 +4,17 @@ import { Entry } from '../types';
  * Get the date from an entry, using date field if available, otherwise createdAt
  */
 export const getEntryDate = (entry: Entry): Date => {
-  const date = entry.date ? new Date(entry.date) : new Date(entry.createdAt);
-  console.log(`getEntryDate for entry ${entry.id}: using ${entry.date ? 'date' : 'createdAt'} field = ${date.toDateString()}`);
-  return date;
+  if (entry.date) {
+    // For date strings in YYYY-MM-DD format, create date in local timezone
+    const [year, month, day] = entry.date.split('-').map(Number);
+    const date = new Date(year, month - 1, day); // month is 0-indexed
+    console.log(`getEntryDate for entry ${entry.id}: using date field ${entry.date} = ${date.toDateString()}`);
+    return date;
+  } else {
+    const date = new Date(entry.createdAt);
+    console.log(`getEntryDate for entry ${entry.id}: using createdAt field = ${date.toDateString()}`);
+    return date;
+  }
 };
 
 /**
@@ -119,10 +127,14 @@ export const groupEntriesByDate = (entries: Entry[]): Record<string, Entry[]> =>
 };
 
 /**
- * Get current date in YYYY-MM-DD format for input fields
+ * Get current date in YYYY-MM-DD format for input fields (local timezone)
  */
 export const getCurrentDateString = (): string => {
-  return new Date().toISOString().split('T')[0];
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
 };
 
 /**

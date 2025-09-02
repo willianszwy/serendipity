@@ -182,6 +182,24 @@ export const EntryForm: React.FC<EntryFormProps> = ({
             )}
           </div>
 
+          {/* Date */}
+          <div>
+            <label className="block font-semibold mb-2 font-borel" style={{ color: COLORS.primaryText }}>
+              Data *
+            </label>
+            <input
+              type="date"
+              value={formData.date}
+              onChange={(e) => updateFormField('date', e.target.value)}
+              disabled={loading}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 disabled:opacity-50 disabled:bg-gray-50"
+              required
+            />
+            {errors.date && (
+              <p className="text-red-500 text-sm mt-1">{errors.date}</p>
+            )}
+          </div>
+
           {/* Description */}
           <div>
             <label className="block font-semibold mb-2 font-borel" style={{ color: COLORS.primaryText }}>
@@ -207,39 +225,21 @@ export const EntryForm: React.FC<EntryFormProps> = ({
             </div>
           </div>
 
-          {/* Date and Time */}
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block font-semibold mb-2 font-borel" style={{ color: COLORS.primaryText }}>
-                Data *
-              </label>
-              <input
-                type="date"
-                value={formData.date}
-                onChange={(e) => updateFormField('date', e.target.value)}
-                disabled={loading}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 disabled:opacity-50 disabled:bg-gray-50"
-                required
-              />
-              {errors.date && (
-                <p className="text-red-500 text-sm mt-1">{errors.date}</p>
-              )}
-            </div>
-            <div>
-              <label className="block font-semibold mb-2 font-borel" style={{ color: COLORS.primaryText }}>
-                Hora (opcional)
-              </label>
-              <input
-                type="time"
-                value={formData.time}
-                onChange={(e) => updateFormField('time', e.target.value)}
-                disabled={loading}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 disabled:opacity-50 disabled:bg-gray-50"
-              />
-              {errors.time && (
-                <p className="text-red-500 text-sm mt-1">{errors.time}</p>
-              )}
-            </div>
+          {/* Time */}
+          <div>
+            <label className="block font-semibold mb-2 font-borel" style={{ color: COLORS.primaryText }}>
+              Hora (opcional)
+            </label>
+            <input
+              type="time"
+              value={formData.time}
+              onChange={(e) => updateFormField('time', e.target.value)}
+              disabled={loading}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 disabled:opacity-50 disabled:bg-gray-50"
+            />
+            {errors.time && (
+              <p className="text-red-500 text-sm mt-1">{errors.time}</p>
+            )}
           </div>
 
           {/* Links */}
