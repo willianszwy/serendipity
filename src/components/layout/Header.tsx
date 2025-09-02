@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className={`text-center mb-8 ${className}`}>
       <h1 
-        className={`font-bold mb-2 font-borel ${isCompact ? 'text-xl' : 'text-6xl'}`} 
+        className={`font-bold mb-2 font-borel ${isCompact ? 'text-xl' : 'text-5xl'}`} 
         style={{ color: COLORS.primaryText }}
       >
         {title}
