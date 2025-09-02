@@ -6,6 +6,7 @@ import { Entry } from './types';
 import { useEntries, useStats, useModal } from './hooks';
 import { 
   Header,
+  Footer,
   FloatingButton,
   MonthView,
   LoadingSpinner,
@@ -142,11 +143,7 @@ const SerendipityApp: React.FC = () => {
     >
       <div className="container mx-auto px-4 py-6">
         {/* App Header */}
-        <Header 
-          entries={entries}
-          onImport={importEntries}
-          showBackupButtons={true}
-        />
+        <Header />
 
         {/* Monthly Score Card */}
         <ScoreCard
@@ -164,6 +161,11 @@ const SerendipityApp: React.FC = () => {
           currentYear={currentDate.getFullYear()}
         />
 
+        {/* Footer with backup buttons */}
+        <Footer 
+          entries={entries}
+          onImport={importEntries}
+        />
       </div>
 
       {/* Floating Action Button */}
