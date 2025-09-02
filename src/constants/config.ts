@@ -7,7 +7,7 @@ export const CONFIG = {
   
   // Validation limits
   VALIDATION: {
-    DESCRIPTION_MAX_LENGTH: 600,
+    DESCRIPTION_MAX_LENGTH: 1000,
     MAX_LINKS: 3
   },
   

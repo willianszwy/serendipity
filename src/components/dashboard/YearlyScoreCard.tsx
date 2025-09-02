@@ -67,7 +67,7 @@ export const YearlyScoreCard: React.FC<YearlyScoreCardProps> = ({
           <thead>
             <tr>
               <th 
-                className="text-left p-2 font-semibold" 
+                className="text-left p-2 font-semibold font-borel" 
                 style={{ color: COLORS.primaryText }}
               >
                 Mês
@@ -86,7 +86,7 @@ export const YearlyScoreCard: React.FC<YearlyScoreCardProps> = ({
                         style: { color: COLORS.primaryText } 
                       })
                     ) : (
-                      <span className="text-sm font-medium" style={{ color: COLORS.primaryText }}>
+                      <span className="text-sm font-medium font-borel" style={{ color: COLORS.primaryText }}>
                         {category.name}
                       </span>
                     )}
@@ -111,7 +111,7 @@ export const YearlyScoreCard: React.FC<YearlyScoreCardProps> = ({
                   title={onMonthClick ? `Clique para ver detalhes de ${month}` : undefined}
                 >
                   <td 
-                    className="p-2 font-medium" 
+                    className="p-2 font-medium font-borel" 
                     style={{ color: COLORS.primaryText }}
                   >
                     {month}
@@ -122,7 +122,7 @@ export const YearlyScoreCard: React.FC<YearlyScoreCardProps> = ({
                     return (
                       <td key={category.id} className="text-center p-2">
                         <span 
-                          className={`text-lg ${count > 0 ? 'font-semibold' : 'opacity-50'}`} 
+                          className={`text-lg font-borel ${count > 0 ? 'font-semibold' : 'opacity-50'}`} 
                           style={{ color: COLORS.primaryText }}
                         >
                           {count}
@@ -137,7 +137,7 @@ export const YearlyScoreCard: React.FC<YearlyScoreCardProps> = ({
           <tfoot>
             <tr className="border-t border-black border-opacity-20">
               <th 
-                className="text-left p-2 font-bold" 
+                className="text-left p-2 font-bold font-borel" 
                 style={{ color: COLORS.primaryText }}
               >
                 Total Anual
@@ -148,7 +148,7 @@ export const YearlyScoreCard: React.FC<YearlyScoreCardProps> = ({
                 return (
                   <th key={category.id} className="text-center p-2">
                     <span 
-                      className="text-lg font-bold" 
+                      className="text-lg font-bold font-borel" 
                       style={{ color: COLORS.primaryText }}
                     >
                       {yearTotal}

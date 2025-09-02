@@ -171,7 +171,7 @@ export const EntryForm: React.FC<EntryFormProps> = ({
                       })
                     ) : null}
                   </div>
-                  <div className="text-sm font-medium font-borel" style={{ color: COLORS.primaryText }}>
+                  <div className="text-sm font-medium font-borel text-center" style={{ color: COLORS.primaryText }}>
                     {category.name}
                   </div>
                 </button>
@@ -192,11 +192,11 @@ export const EntryForm: React.FC<EntryFormProps> = ({
               value={formData.date}
               onChange={(e) => updateFormField('date', e.target.value)}
               disabled={loading}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 disabled:opacity-50 disabled:bg-gray-50"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 disabled:opacity-50 disabled:bg-gray-50 font-borel"
               required
             />
             {errors.date && (
-              <p className="text-red-500 text-sm mt-1">{errors.date}</p>
+              <p className="text-red-500 text-sm mt-1 font-borel">{errors.date}</p>
             )}
           </div>
 
@@ -211,16 +211,16 @@ export const EntryForm: React.FC<EntryFormProps> = ({
               maxLength={CONFIG.VALIDATION.DESCRIPTION_MAX_LENGTH}
               rows={3}
               disabled={loading}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 disabled:opacity-50 disabled:bg-gray-50"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 disabled:opacity-50 disabled:bg-gray-50 font-borel"
               placeholder="Descreva o acontecimento..."
               required
             />
             <div className="flex justify-between items-center mt-1">
-              <div className="text-sm text-gray-500">
+              <div className="text-sm text-gray-500 font-borel">
                 {formatCharacterCount(formData.description, CONFIG.VALIDATION.DESCRIPTION_MAX_LENGTH)}
               </div>
               {errors.description && (
-                <p className="text-red-500 text-sm">{errors.description}</p>
+                <p className="text-red-500 text-sm font-borel">{errors.description}</p>
               )}
             </div>
           </div>
@@ -235,10 +235,10 @@ export const EntryForm: React.FC<EntryFormProps> = ({
               value={formData.time}
               onChange={(e) => updateFormField('time', e.target.value)}
               disabled={loading}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 disabled:opacity-50 disabled:bg-gray-50"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 disabled:opacity-50 disabled:bg-gray-50 font-borel"
             />
             {errors.time && (
-              <p className="text-red-500 text-sm mt-1">{errors.time}</p>
+              <p className="text-red-500 text-sm mt-1 font-borel">{errors.time}</p>
             )}
           </div>
 
@@ -256,11 +256,11 @@ export const EntryForm: React.FC<EntryFormProps> = ({
                     value={formData[fieldName]}
                     onChange={(e) => updateFormField(fieldName, e.target.value)}
                     disabled={loading}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 disabled:opacity-50 disabled:bg-gray-50"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 disabled:opacity-50 disabled:bg-gray-50 font-borel"
                     placeholder={`Link ${num} (https://...)`}
                   />
                   {errors[fieldName] && (
-                    <p className="text-red-500 text-sm mt-1">{errors[fieldName]}</p>
+                    <p className="text-red-500 text-sm mt-1 font-borel">{errors[fieldName]}</p>
                   )}
                 </div>
               );
@@ -270,7 +270,7 @@ export const EntryForm: React.FC<EntryFormProps> = ({
           {/* General Errors */}
           {errors.general && (
             <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-              <p className="text-red-600 text-sm">{errors.general}</p>
+              <p className="text-red-600 text-sm font-borel">{errors.general}</p>
             </div>
           )}
 
@@ -280,7 +280,7 @@ export const EntryForm: React.FC<EntryFormProps> = ({
               type="button"
               onClick={onCancel}
               disabled={loading}
-              className="flex-1 py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50"
+              className="flex-1 py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50 font-borel"
               style={{ color: COLORS.primaryText }}
             >
               Cancelar
@@ -288,7 +288,7 @@ export const EntryForm: React.FC<EntryFormProps> = ({
             <button
               type="submit"
               disabled={isSubmitDisabled}
-              className="flex-1 py-3 px-4 bg-pink-500 text-white rounded-lg hover:bg-pink-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+              className="flex-1 py-3 px-4 bg-pink-500 text-white rounded-lg hover:bg-pink-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors font-borel"
             >
               {loading ? 'Salvando...' : 'Salvar'}
             </button>

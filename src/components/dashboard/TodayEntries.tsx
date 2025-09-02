@@ -45,11 +45,11 @@ export const TodayEntries: React.FC<TodayEntriesProps> = ({
     >
       {showTitle && (
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold" style={{ color: COLORS.primaryText }}>
+          <h2 className="text-2xl font-bold font-borel" style={{ color: COLORS.primaryText }}>
             Acontecimentos de Hoje
           </h2>
           <span 
-            className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-base font-medium"
+            className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-base font-medium font-borel"
             style={{ color: COLORS.primaryText }}
           >
             {todayEntries.length} {todayEntries.length === 1 ? 'registro' : 'registros'}
@@ -72,7 +72,7 @@ export const TodayEntries: React.FC<TodayEntriesProps> = ({
       {hasMoreEntries && (
         <div className="mt-4 text-center">
           <p 
-            className="text-sm opacity-75"
+            className="text-sm opacity-75 font-borel"
             style={{ color: COLORS.primaryText }}
           >
             + {entries.filter(entry => isToday(getEntryDate(entry))).length - maxEntries!} mais registros hoje

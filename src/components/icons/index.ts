@@ -4,3 +4,6 @@ export { default as SerendipityIcon } from './SerendipityIcon';
 export { default as ManifestationIcon } from './ManifestationIcon';
 export { default as WishIcon } from './WishIcon';
 export { default as DreamIcon } from './DreamIcon';
+export { InsightIcon } from './InsightIcon';
+export { MeditIcon } from './MeditIcon';
+export { EuAmoIcon } from './EuAmoIcon';

@@ -24,6 +24,7 @@ const SerendipityApp: React.FC = () => {
     addEntry,
     updateEntry,
     deleteEntry,
+    importEntries,
     clearError
   } = useEntries();
 
@@ -141,7 +142,11 @@ const SerendipityApp: React.FC = () => {
     >
       <div className="container mx-auto px-4 py-6">
         {/* App Header */}
-        <Header />
+        <Header 
+          entries={entries}
+          onImport={importEntries}
+          showBackupButtons={true}
+        />
 
         {/* Monthly Score Card */}
         <ScoreCard

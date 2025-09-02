@@ -39,14 +39,14 @@ export const ErrorDisplay: React.FC<ErrorDisplayProps> = ({
 
       {/* Error Message */}
       <h3 
-        className={`font-semibold mb-2 ${isCompact ? 'text-lg' : 'text-xl'}`} 
+        className={`font-semibold mb-2 font-borel ${isCompact ? 'text-lg' : 'text-xl'}`} 
         style={{ color: COLORS.primaryText }}
       >
         Oops! Algo deu errado
       </h3>
       
       <p 
-        className={`mb-6 opacity-80 ${isCompact ? 'text-sm' : 'text-base'}`} 
+        className={`mb-6 opacity-80 font-borel ${isCompact ? 'text-sm' : 'text-base'}`} 
         style={{ color: COLORS.primaryText }}
       >
         {error}
@@ -67,7 +67,7 @@ export const ErrorDisplay: React.FC<ErrorDisplayProps> = ({
             `}
           >
             <RefreshCw className={isCompact ? 'w-4 h-4' : 'w-5 h-5'} />
-            Tentar Novamente
+            <span className="font-borel">Tentar Novamente</span>
           </button>
         )}
 
@@ -85,7 +85,7 @@ export const ErrorDisplay: React.FC<ErrorDisplayProps> = ({
             style={{ color: COLORS.primaryText }}
           >
             <Home className={isCompact ? 'w-4 h-4' : 'w-5 h-5'} />
-            Início
+            <span className="font-borel">Início</span>
           </button>
         )}
 
@@ -102,7 +102,7 @@ export const ErrorDisplay: React.FC<ErrorDisplayProps> = ({
             `}
           >
             <RefreshCw className={isCompact ? 'w-4 h-4' : 'w-5 h-5'} />
-            Recarregar Página
+            <span className="font-borel">Recarregar Página</span>
           </button>
         )}
       </div>

@@ -14,6 +14,7 @@ export interface UseEntriesReturn {
   deleteEntry: (id: number) => Promise<boolean>;
   deleteAllEntries: () => Promise<boolean>;
   refreshEntries: () => Promise<void>;
+  importEntries: (importedEntries: Entry[]) => Promise<boolean>;
   
   // Search and filter
   searchEntries: (searchText: string) => Promise<Entry[]>;
@@ -195,6 +196,65 @@ export const useEntries = (): UseEntriesReturn => {
   }, [handleError]);
 
   /**
+   * Import entries from backup
+   */
+  const importEntries = useCallback(async (importedEntries: Entry[]): Promise<boolean> => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      let importCount = 0;
+      let duplicateCount = 0;
+      
+      for (const entry of importedEntries) {
+        // Check if entry already exists (by ID or by content)
+        const existingEntry = entries.find(e => 
+          e.id === entry.id || 
+          (e.category === entry.category && 
+           e.description === entry.description && 
+           e.date === entry.date)
+        );
+        
+        if (!existingEntry) {
+          // Generate new ID to avoid conflicts
+          const newEntry = await EntryService.create({
+            category: entry.category,
+            description: entry.description,
+            date: entry.date,
+            time: entry.time,
+            link1: entry.link1,
+            link2: entry.link2,
+            link3: entry.link3
+          });
+          
+          if (newEntry) {
+            importCount++;
+          }
+        } else {
+          duplicateCount++;
+        }
+      }
+      
+      // Reload all entries to reflect changes
+      await loadEntries();
+      
+      // Show import summary
+      if (importCount > 0) {
+        alert(`Importação concluída!\n${importCount} entradas importadas.\n${duplicateCount > 0 ? `${duplicateCount} entradas duplicadas ignoradas.` : ''}`);
+      } else {
+        alert('Nenhuma entrada nova foi importada (todas já existem).');
+      }
+      
+      return importCount > 0;
+    } catch (error) {
+      handleError(error);
+      return false;
+    } finally {
+      setLoading(false);
+    }
+  }, [entries, loadEntries, handleError]);
+
+  /**
    * Get entry by ID from current state
    */
   const getEntryById = useCallback((id: number): Entry | null => {
@@ -234,6 +294,7 @@ export const useEntries = (): UseEntriesReturn => {
     deleteEntry,
     deleteAllEntries,
     refreshEntries,
+    importEntries,
     
     // Search and filter
     searchEntries,
