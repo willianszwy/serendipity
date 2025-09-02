@@ -39,7 +39,7 @@ const SerendipityApp: React.FC = () => {
   const addModal = useModal();
   const [editingEntry, setEditingEntry] = useState<Entry | null>(null);
   const [selectedMonth, setSelectedMonth] = useState<number | null>(null);
-  const [currentDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(new Date());
 
   // Event handlers
   const handleEdit = (entry: Entry) => {
@@ -79,6 +79,17 @@ const SerendipityApp: React.FC = () => {
   const handleBackFromMonth = () => {
     setSelectedMonth(null);
     setEditingEntry(null); // Clear any active edit modal when returning to main view
+  };
+
+  // Debug function to force stats recalculation
+  const handleDebugRefresh = () => {
+    console.log('=== DEBUG REFRESH ===');
+    console.log('Current entries:', entries);
+    console.log('Daily stats:', dailyStats);
+    console.log('Monthly stats:', monthlyStats);
+    
+    // Force a re-render by updating the date
+    setCurrentDate(new Date());
   };
 
   // Error state
@@ -142,7 +153,7 @@ const SerendipityApp: React.FC = () => {
     >
       <div className="container mx-auto px-4 py-6">
         {/* App Header */}
-        <Header />
+        <Header onDebugRefresh={handleDebugRefresh} />
 
         {/* Daily Score Card */}
         <ScoreCard

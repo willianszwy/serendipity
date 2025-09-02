@@ -51,13 +51,13 @@ export const EntryCard: React.FC<EntryCardProps> = ({
             ) : category?.icon ? (
               React.createElement(category.icon, { 
                 className: isCompact ? "w-4 h-4" : "w-5 h-5", 
-                style: { color: COLORS.lightText } 
+                style: { color: COLORS.primaryText } 
               })
             ) : null}
           </div>
           <span 
             className={`font-borel font-bold ${isCompact ? "text-sm" : ""}`} 
-            style={{ color: COLORS.lightText }}
+            style={{ color: COLORS.primaryText }}
           >
             {category?.name}
           </span>
@@ -72,7 +72,7 @@ export const EntryCard: React.FC<EntryCardProps> = ({
               title="Editar acontecimento"
               aria-label="Editar acontecimento"
             >
-              <Edit3 className="w-4 h-4" style={{ color: COLORS.lightText }} />
+              <Edit3 className="w-4 h-4" style={{ color: COLORS.primaryText }} />
             </button>
             <button
               onClick={handleDelete}
@@ -81,7 +81,7 @@ export const EntryCard: React.FC<EntryCardProps> = ({
               title="Excluir acontecimento"
               aria-label="Excluir acontecimento"
             >
-              <Trash2 className="w-4 h-4" style={{ color: COLORS.lightText }} />
+              <Trash2 className="w-4 h-4" style={{ color: COLORS.primaryText }} />
             </button>
           </div>
         )}
@@ -91,7 +91,7 @@ export const EntryCard: React.FC<EntryCardProps> = ({
       {entry.description && (
         <p 
           className={`mb-2 font-borel font-bold ${isCompact ? 'text-sm' : ''}`} 
-          style={{ color: COLORS.lightText }}
+          style={{ color: COLORS.primaryText }}
         >
           {entry.description}
         </p>
@@ -100,7 +100,7 @@ export const EntryCard: React.FC<EntryCardProps> = ({
       {/* Date and Time Info */}
       <div 
         className="flex items-center gap-4 text-sm opacity-80 font-borel font-bold" 
-        style={{ color: COLORS.lightText }}
+        style={{ color: COLORS.primaryText }}
       >
         {entry.time && (
           <span className="flex items-center gap-1">
@@ -126,7 +126,7 @@ export const EntryCard: React.FC<EntryCardProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 text-sm hover:underline transition-colors font-borel font-bold"
-                style={{ color: COLORS.lightText }}
+                style={{ color: COLORS.primaryText }}
                 title={link}
               >
                 <Link className="w-3 h-3" />

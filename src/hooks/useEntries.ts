@@ -74,7 +74,12 @@ export const useEntries = (): UseEntriesReturn => {
       setError(null);
       
       const newEntry = await EntryService.create(data);
-      setEntries(prev => [newEntry, ...prev]);
+      console.log('New entry created:', newEntry);
+      
+      // Force reload from storage to ensure consistency
+      const allEntries = await EntryService.getAll();
+      console.log('Force reloaded entries from storage:', allEntries.length);
+      setEntries(allEntries);
       
       return newEntry;
     } catch (error) {
@@ -204,6 +209,7 @@ export const useEntries = (): UseEntriesReturn => {
         setError(null);
         
         const loadedEntries = await EntryService.getAll();
+        console.log('useEntries useEffect: loaded', loadedEntries.length, 'entries from storage');
         setEntries(loadedEntries);
       } catch (error) {
         const errorInfo = handleAsyncError(error);

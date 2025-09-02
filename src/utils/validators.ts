@@ -4,7 +4,7 @@ import { CategoryId, CreateEntryData } from '../types';
  * Validate if a string is a valid category ID
  */
 export const isValidCategory = (category: string): category is CategoryId => {
-  const validCategories: CategoryId[] = ['gratidao', 'serendipity', 'manifestacao', 'desejo', 'sonho'];
+  const validCategories: CategoryId[] = ['gratidao', 'serendipity', 'manifestacao', 'desejo', 'sonho', 'esp'];
   return validCategories.includes(category as CategoryId);
 };
 

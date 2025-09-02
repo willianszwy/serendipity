@@ -69,7 +69,7 @@ export const MonthView: React.FC<MonthViewProps> = ({
                 className="rounded-lg p-4 shadow-lg" 
                 style={{ backgroundColor: COLORS.dailyCard }}
               >
-                <h3 className="mb-3 text-4xl font-borel" style={{ color: COLORS.lightText }}>
+                <h3 className="mb-3 text-4xl font-borel" style={{ color: COLORS.primaryText }}>
                   {formatDatePT(new Date(date))}
                   <span className="ml-2 text-xl opacity-75 font-borel">
                     ({dayEntries.length} {dayEntries.length === 1 ? 'registro' : 'registros'})

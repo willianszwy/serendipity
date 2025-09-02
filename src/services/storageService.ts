@@ -85,11 +85,16 @@ export class StorageService {
 
   // App-specific methods
   static getEntries() {
-    return this.get(CONFIG.STORAGE_KEYS.ENTRIES, []);
+    const entries = this.get(CONFIG.STORAGE_KEYS.ENTRIES, []);
+    console.log('StorageService.getEntries() returning:', entries.length, 'entries');
+    return entries;
   }
 
   static setEntries(entries: unknown[]) {
-    return this.set(CONFIG.STORAGE_KEYS.ENTRIES, entries);
+    console.log('StorageService.setEntries() saving:', entries.length, 'entries');
+    const result = this.set(CONFIG.STORAGE_KEYS.ENTRIES, entries);
+    console.log('StorageService.setEntries() result:', result);
+    return result;
   }
 
   static getStorageInfo() {

@@ -4,28 +4,39 @@ import { Entry } from '../types';
  * Get the date from an entry, using date field if available, otherwise createdAt
  */
 export const getEntryDate = (entry: Entry): Date => {
-  return entry.date ? new Date(entry.date) : new Date(entry.createdAt);
+  const date = entry.date ? new Date(entry.date) : new Date(entry.createdAt);
+  console.log(`getEntryDate for entry ${entry.id}: using ${entry.date ? 'date' : 'createdAt'} field = ${date.toDateString()}`);
+  return date;
 };
 
 /**
  * Check if two dates are the same day
  */
 export const isSameDay = (date1: Date, date2: Date): boolean => {
-  return date1.toDateString() === date2.toDateString();
+  const result = date1.getFullYear() === date2.getFullYear() && 
+                date1.getMonth() === date2.getMonth() && 
+                date1.getDate() === date2.getDate();
+  console.log(`isSameDay: ${date1.toDateString()} vs ${date2.toDateString()} = ${result}`);
+  return result;
 };
 
 /**
  * Check if a date is today
  */
 export const isToday = (date: Date): boolean => {
-  return isSameDay(date, new Date());
+  const today = new Date();
+  const result = isSameDay(date, today);
+  console.log(`isToday check: ${date.toDateString()} vs ${today.toDateString()} = ${result}`);
+  return result;
 };
 
 /**
  * Check if a date is in the specified month and year
  */
 export const isInMonth = (date: Date, month: number, year: number): boolean => {
-  return date.getMonth() === month && date.getFullYear() === year;
+  const result = date.getMonth() === month && date.getFullYear() === year;
+  console.log(`isInMonth: ${date.toDateString()} (${date.getMonth()}/${date.getFullYear()}) vs target (${month}/${year}) = ${result}`);
+  return result;
 };
 
 /**
@@ -33,7 +44,9 @@ export const isInMonth = (date: Date, month: number, year: number): boolean => {
  */
 export const isInCurrentMonth = (date: Date): boolean => {
   const now = new Date();
-  return isInMonth(date, now.getMonth(), now.getFullYear());
+  const result = isInMonth(date, now.getMonth(), now.getFullYear());
+  console.log(`isInCurrentMonth check: ${date.toDateString()} (${date.getMonth()}/${date.getFullYear()}) vs current (${now.getMonth()}/${now.getFullYear()}) = ${result}`);
+  return result;
 };
 
 /**

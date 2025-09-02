@@ -30,14 +30,18 @@ export const useStats = (entries: Entry[]): UseStatsReturn => {
    * Calculate daily statistics (memoized)
    */
   const dailyStats = useMemo(() => {
-    return StatsService.calculateDailyStats(entries);
+    const stats = StatsService.calculateDailyStats(entries);
+    console.log('Daily stats calculated:', stats, 'from entries:', entries.length);
+    return stats;
   }, [entries]);
 
   /**
    * Calculate monthly statistics (memoized)
    */
   const monthlyStats = useMemo(() => {
-    return StatsService.calculateMonthlyStats(entries);
+    const stats = StatsService.calculateMonthlyStats(entries);
+    console.log('Monthly stats calculated:', stats, 'from entries:', entries.length);
+    return stats;
   }, [entries]);
 
   /**

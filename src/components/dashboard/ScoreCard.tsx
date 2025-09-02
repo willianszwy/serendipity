@@ -22,6 +22,8 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
   className = ''
 }) => {
   const isCompact = variant === 'compact';
+  
+  console.log(`ScoreCard ${title} received stats:`, stats);
 
   return (
     <div 
@@ -31,7 +33,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
       {showTitle && (
         <h2 
           className={`font-borel mb-4 ${isCompact ? 'text-3xl mb-3' : 'text-4xl'}`} 
-          style={{ color: COLORS.lightText }}
+          style={{ color: COLORS.primaryText }}
         >
           {title}
         </h2>
@@ -49,7 +51,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
                 ) : category.icon ? (
                   React.createElement(category.icon, { 
                     className: isCompact ? "w-8 h-8" : "w-10 h-10", 
-                    style: { color: COLORS.lightText } 
+                    style: { color: COLORS.primaryText } 
                   })
                 ) : null}
               </div>
@@ -57,7 +59,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
               {!isCompact && (
                 <div 
                   className="text-base font-borel font-bold" 
-                  style={{ color: COLORS.lightText }}
+                  style={{ color: COLORS.primaryText }}
                 >
                   {category.name}
                 </div>
@@ -65,7 +67,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
               
               <div 
                 className={`font-bold mt-1 ${isCompact ? 'text-xl' : 'text-3xl'}`} 
-                style={{ color: COLORS.lightText }}
+                style={{ color: COLORS.primaryText }}
                 title={`${category.name}: ${count}`}
               >
                 {count}

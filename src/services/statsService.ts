@@ -29,13 +29,19 @@ export class StatsService {
    */
   private static calculateCategoryStats(entries: Entry[]): CategoryStats {
     const stats = this.createEmptyCategoryStats();
+    console.log('Initial empty stats:', stats);
     
     entries.forEach(entry => {
+      console.log(`Processing entry ${entry.id} with category '${entry.category}'`);
       if (stats[entry.category] !== undefined) {
         stats[entry.category]++;
+        console.log(`Incremented ${entry.category} to ${stats[entry.category]}`);
+      } else {
+        console.log(`Category '${entry.category}' not found in stats object`);
       }
     });
     
+    console.log('Final calculated stats:', stats);
     return stats;
   }
 
@@ -43,16 +49,50 @@ export class StatsService {
    * Calculate daily statistics (today's entries)
    */
   static calculateDailyStats(entries: Entry[]): CategoryStats {
-    const todayEntries = entries.filter(entry => isToday(getEntryDate(entry)));
-    return this.calculateCategoryStats(todayEntries);
+    console.log('=== CALCULATING DAILY STATS ===');
+    console.log('Total entries available:', entries.length);
+    
+    const today = new Date();
+    console.log('Today is:', today.toDateString());
+    
+    const todayEntries = entries.filter(entry => {
+      const entryDate = getEntryDate(entry);
+      const isTodayMatch = isToday(entryDate);
+      console.log(`Entry ${entry.id}: ${entryDate.toDateString()} - isToday: ${isTodayMatch}`);
+      return isTodayMatch;
+    });
+    
+    console.log('Filtered today entries:', todayEntries.length);
+    console.log('Today entries for stats:', todayEntries.map(e => ({ id: e.id, category: e.category, date: e.date })));
+    
+    const stats = this.calculateCategoryStats(todayEntries);
+    console.log('=== END DAILY STATS ===');
+    return stats;
   }
 
   /**
    * Calculate monthly statistics (current month's entries)
    */
   static calculateMonthlyStats(entries: Entry[]): CategoryStats {
-    const monthEntries = entries.filter(entry => isInCurrentMonth(getEntryDate(entry)));
-    return this.calculateCategoryStats(monthEntries);
+    console.log('=== CALCULATING MONTHLY STATS ===');
+    console.log('Total entries available:', entries.length);
+    
+    const now = new Date();
+    console.log('Current month/year:', now.getMonth(), '/', now.getFullYear());
+    
+    const monthEntries = entries.filter(entry => {
+      const entryDate = getEntryDate(entry);
+      const isCurrentMonthMatch = isInCurrentMonth(entryDate);
+      console.log(`Entry ${entry.id}: ${entryDate.toDateString()} (${entryDate.getMonth()}/${entryDate.getFullYear()}) - isCurrentMonth: ${isCurrentMonthMatch}`);
+      return isCurrentMonthMatch;
+    });
+    
+    console.log('Filtered month entries:', monthEntries.length);
+    console.log('Month entries for stats:', monthEntries.map(e => ({ id: e.id, category: e.category, date: e.date })));
+    
+    const stats = this.calculateCategoryStats(monthEntries);
+    console.log('=== END MONTHLY STATS ===');
+    return stats;
   }
 
   /**
